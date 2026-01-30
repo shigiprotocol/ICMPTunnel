@@ -7,7 +7,7 @@ if [ "$EUID" -ne 0 ]; then
   echo "🛡️ Please enter your password to run as root..."
   exec sudo bash "$0" "$@"
 fi
-Version="v1.5.0"
+Version="v1.1.0"
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 CYAN='\033[0;36m'
@@ -32,12 +32,12 @@ function install_icmp() {
     echo
     echo -e "${CYAN}"
     echo "╭────────────────────────────────────────────────────────────╮"
-    echo "│                  🚀  ICMPTunnel Installer                  │"
-    echo "│                                                            │"
-    echo "│      🛰  Lightweight Tunneling over ICMP Protocol          │"
-    echo "│      🧠  Developed with 💙  by Q-TEAM                      │"
-    echo "│      📢  Telegram: @Q_teams                                │"
-    echo "│      📦 Version : $Version                                 │"
+    echo "│                  🚀  ICMPTunnel Installer                  "
+    echo "│                                                            "
+    echo "│      🛰  Lightweight Tunneling over ICMP Protocol          "
+    echo "│      🧠  Developed with 💙  by Q-TEAM                      "
+    echo "│      📢  Telegram: @Q_teams                                "
+    echo "│      📦 Version : $Version                                 "
     echo "╰────────────────────────────────────────────────────────────╯"
     echo -e "${NC}"
     echo
@@ -61,12 +61,12 @@ function install_icmp() {
     echo
     echo -e "${CYAN}"
     echo "╭────────────────────────────────────────────────────────────╮"
-    echo "│                  🚀  ICMPTunnel Installer                  │"
-    echo "│                                                            │"
-    echo "│      🛰  Lightweight Tunneling over ICMP Protocol          │"
-    echo "│      🧠  Developed with 💙  by Q-TEAM                      │"
-    echo "│      📢  Telegram: @Q_teams                                │"
-    echo "│      📦 Version: $Version                                  │"
+    echo "│                  🚀  ICMPTunnel Installer                  "
+    echo "│                                                            "
+    echo "│      🛰  Lightweight Tunneling over ICMP Protocol          "
+    echo "│      🧠  Developed with 💙  by Q-TEAM                      "
+    echo "│      📢  Telegram: @Q_teams                                "
+    echo "│      📦 Version: $Version                                  "
     echo "╰────────────────────────────────────────────────────────────╯"
     echo -e "${NC}"
     echo
