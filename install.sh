@@ -7,7 +7,7 @@ if [ "$EUID" -ne 0 ]; then
   echo "🛡️ Please enter your password to run as root..."
   exec sudo bash "$0" "$@"
 fi
-
+Version="v1.5.0"
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 CYAN='\033[0;36m'
@@ -36,7 +36,8 @@ function install_icmp() {
     echo "│                                                            │"
     echo "│      🛰  Lightweight Tunneling over ICMP Protocol          │"
     echo "│      🧠  Developed with 💙  by Q-TEAM                      │"
-    echo "│      📢  Telegram: @Qteam_official                        │"
+    echo "│      📢  Telegram: @Q_teams                                │"
+    echo "│      📦 Version : $Version                                 │"
     echo "╰────────────────────────────────────────────────────────────╯"
     echo -e "${NC}"
     echo
@@ -64,7 +65,8 @@ function install_icmp() {
     echo "│                                                            │"
     echo "│      🛰  Lightweight Tunneling over ICMP Protocol          │"
     echo "│      🧠  Developed with 💙  by Q-TEAM                      │"
-    echo "│      📢  Telegram: @Qteam_official                        │"
+    echo "│      📢  Telegram: @Q_teams                                │"
+    echo "│      📦 Version: $Version                                  │"
     echo "╰────────────────────────────────────────────────────────────╯"
     echo -e "${NC}"
     echo
@@ -83,7 +85,27 @@ function install_icmp() {
   echo "$mode" > "$MODE_FILE"
 
   if [[ "$mode" == "1" ]]; then
-    read -p "🖥 Enter server IP address: " SERVER_IP
+    read -p "🌐 Please enter your server IP address: " SERVER_IP
+
+    if [[ -z "$SERVER_IP" ]]; then
+        echo "❌ No IP address entered. Exiting..."
+        exit 1
+    fi
+  fi
+
+  read -p "🔒 Would you like your data to be encrypted end-to-end ? (y/n): " encrypt_data_q
+
+  encrypt_data_q=$(echo "$encrypt_data_q" | tr '[:upper:]' '[:lower:]')
+
+  if [ -z "$encrypt_data_q" ] || [ "$encrypt_data_q" = "y" ] || [ "$encrypt_data_q" = "yes" ]; then
+      encrypt_data=true
+  else
+      encrypt_data=false
+  fi
+
+  if [ "$encrypt_data" = true ]; then
+    read -p "🔑 Enter your encryption key: " encrypt_data_key
+    echo "Your encryption key is set."
   fi
 
   if [[ "$INSTALL_MODE" == "online" ]]; then
@@ -263,6 +285,7 @@ while true; do
   echo "╭──────────────────────────────────────────"
   echo -e "│        ⚙️  ICMPTunnel Control Panel  ( \${GREEN}\${ACTIVE_SERVICE}\${NC} )    "
   echo -e "│        ⚙️  Status : \${GREEN}\${statusservice}\${NC}"
+  echo -e "│        📦 Version : $Version"
   echo "╰──────────────────────────────────────────"
   echo -e "\${NC}"
 
@@ -342,7 +365,9 @@ EOF
   "block_country": "",
   "dns":"8.8.8.8",
   "key": 20201204,
-  "api_port" : "1080"
+  "api_port" : "1080",
+  "encrypt_data" : $encrypt_data,
+  "encrypt_data_key" : "$encrypt_data_key"
 }
 EOF
     cat <<EOF > "/etc/systemd/system/$SERVICE_CLIENT"
@@ -376,7 +401,9 @@ EOF
   "block_country": "",
   "dns":"8.8.8.8",
   "key": 20201204,
-  "api_port" : "1080"
+  "api_port" : "1080",
+  "encrypt_data" : $encrypt_data,
+  "encrypt_data_key" : "$encrypt_data_key"
 }
 EOF
     cat <<EOF > "/etc/systemd/system/$SERVICE_SERVER"
