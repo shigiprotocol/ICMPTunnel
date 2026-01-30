@@ -101,13 +101,7 @@ q-icmp
 }
 ```
 
-> Refer to [Configuration](#configuration) for more details
 
-5. **Run ICMPTunnel**:
-
-```bash
-docker compose up -d
-```
 
 ---
 
