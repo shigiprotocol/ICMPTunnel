@@ -20,8 +20,9 @@
 
 # ICMPTunnel
 
-**ICMPTunnel** is a proprietary binary tool developed by **Q-TEAM**.  
-It demonstrates tunneling over the ICMP protocol (commonly used by ping).
+This project implements an ICMP-based tunneling mechanism over IPv4, allowing data transmission between a client and a server through ICMP packets (such as Echo Request / Echo Reply).
+
+## ⚠️ This project is intended for educational and research purposes only.
 
 
 ---
