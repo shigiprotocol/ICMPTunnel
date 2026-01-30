@@ -5,12 +5,26 @@ set -a
 
 if [ "$EUID" -ne 0 ]; then
   echo "🛡️ Please enter your password to run as root..."
-  
-  # Re-run the script with sudo by re-downloading it
   exec sudo bash -c "$(curl -sSL https://raw.githubusercontent.com/Qteam-official/ICMPTunnel/main/install.sh)"
 fi
 
+KEY="net.ipv4.icmp_echo_ignore_all"
+CONF_FILE="/etc/sysctl.d/99-icmp-tunnel.conf"
 
+CURRENT=$(sysctl -n $KEY)
+
+if [ "$CURRENT" -eq 1 ]; then
+    echo "[✓] ICMP echo ignore is already enabled."
+else
+    echo "[*] Enabling ICMP echo ignore..."
+    sysctl -w $KEY=1
+
+    if [ ! -f "$CONF_FILE" ]; then
+        echo "$KEY = 1" > $CONF_FILE
+        sysctl --system > /dev/null
+        echo "[✓] ICMP echo ignore enabled permanently."
+    fi
+fi
 
 Version="v1.1.0"
 RED='\033[0;31m'
