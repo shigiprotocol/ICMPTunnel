@@ -25,6 +25,13 @@ This project implements an ICMP-based tunneling mechanism over IPv4, allowing da
 
 ---
 
+## ⚠️ Note ! 
+
+
+** Before starting, make sure to ping the destination server to verify that ICMP traffic is allowed and the server is reachable.
+
+
+---
 ## 🛠️ Installation
 
 ### 📥 Installer (Recommended)
