@@ -8,7 +8,7 @@
   &nbsp;&nbsp;&nbsp;
   [![Docker](https://img.shields.io/badge/Docker-v1.4.0-blue?style=flat&logo=docker&logoColor=fff&color=2597ee)](#-install-with-docker-compose)
   &nbsp;&nbsp;&nbsp;
-  [![Telegram](https://img.shields.io/badge/Telegram-Q_T_E_A_M-green?logo=telegram&logoColor=fff)](https://t.me/Qteam_official)
+  [![Telegram](https://img.shields.io/badge/Telegram-Q_T_E_A_M-green?logo=telegram&logoColor=fff)](https://t.me/Q_teams)
   &nbsp;&nbsp;&nbsp;
   [![License](https://img.shields.io/badge/©_License-Q%20T%20E%20A%20M-red.svg)](https://github.com/Qteam-official/ICMPTunnel/blob/main/LICENSE)
 
