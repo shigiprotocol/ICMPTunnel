@@ -4,9 +4,9 @@
 
 <div align="center">
 
-  [![Releases](https://img.shields.io/badge/Releases-v1.4.0-blue?logo=github)](https://github.com/Qteam-official/ICMPTunnel/releases)
+  [![Releases](https://img.shields.io/badge/Releases-v1.0.0-blue?logo=github)](https://github.com/Qteam-official/ICMPTunnel/releases)
   &nbsp;&nbsp;&nbsp;
-  [![Docker](https://img.shields.io/badge/Docker-v1.4.0-blue?style=flat&logo=docker&logoColor=fff&color=2597ee)](#-install-with-docker-compose)
+  [![Docker](https://img.shields.io/badge/Docker-v1.0.0-blue?style=flat&logo=docker&logoColor=fff&color=2597ee)](#-install-with-docker-compose)
   &nbsp;&nbsp;&nbsp;
   [![Telegram](https://img.shields.io/badge/Telegram-Q_T_E_A_M-green?logo=telegram&logoColor=fff)](https://t.me/Q_teams)
   &nbsp;&nbsp;&nbsp;
