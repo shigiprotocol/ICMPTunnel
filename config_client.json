@@ -1,11 +1,11 @@
 {
   "type": "client",
   "listen_port_socks": "1010",
-  "server": "0.0.0.0",
+  "server": "1.2.3.4.5",
   "timeout": 20,
   "dns":"8.8.8.8",
-  "key": 20201204,
+  "key": 12345678,  
   "api_port" : "1080",
   "encrypt_data" : true,
-  "encrypt_data_key" : "1QaKxkkkal10203Ps90!@oO"
+  "encrypt_data_key" : "Ysh!io19HSwqi1ldm"
 }
