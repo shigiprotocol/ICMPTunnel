@@ -5,8 +5,13 @@ set -a
 
 if [ "$EUID" -ne 0 ]; then
   echo "🛡️ Please enter your password to run as root..."
-  exec sudo bash "$0" "$@"
+  
+  # Re-run the script with sudo by re-downloading it
+  exec sudo bash -c "$(curl -sSL https://raw.githubusercontent.com/Qteam-official/ICMPTunnel/main/install.sh)"
 fi
+
+
+
 Version="v1.1.0"
 RED='\033[0;31m'
 GREEN='\033[0;32m'
