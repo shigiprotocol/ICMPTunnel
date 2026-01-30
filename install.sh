@@ -131,9 +131,9 @@ function install_icmp() {
     URL=$(curl -s "$GITHUB_API" | grep browser_download_url | grep "$TARGET" | cut -d '"' -f 4)
 
 
-    echo -e "${CYAN}📦 Downloading Geoip from GitHub...${NC}"
-    curl -L -# -o "$GEOIP_COUNTRY_PATH" "$GEOIP_COUNTRY_PATH_DL"
-    echo -e "${GREEN}✅ Geoip Downloaded${NC}"
+    # echo -e "${CYAN}📦 Downloading Geoip from GitHub...${NC}"
+    # curl -L -# -o "$GEOIP_COUNTRY_PATH" "$GEOIP_COUNTRY_PATH_DL"
+    # echo -e "${GREEN}✅ Geoip Downloaded${NC}"
 
     if [[ -z "$URL" ]]; then
       echo -e "${RED}❌ Failed to fetch download URL. Exiting.${NC}"
